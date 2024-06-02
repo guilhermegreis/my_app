@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom'
 
 import MenuIcon from '@material-ui/icons/Menu'
 import HomeIcon from '@material-ui/icons/Home'
+import Person from '@material-ui/icons/Person'
 import PersonAddIcon from '@material-ui/icons/PersonAdd'
 
 import useStyles from './Header.style'
@@ -22,8 +23,8 @@ const Header = () => {
     }
 
     const handleMenuClick = route => {
-        handleToggleMenu()
         history.push(route)
+        handleToggleMenu()
     }
 
     return (
@@ -48,6 +49,12 @@ const Header = () => {
                             <ListItemText>Home</ListItemText>
                     </ListItem>
                     <ListItem button onClick={() => handleMenuClick('/customers')}>
+                        <ListItemIcon>
+                            <Person />
+                        </ListItemIcon>
+                            <ListItemText>Lista de Cliente</ListItemText>
+                    </ListItem>
+                    <ListItem button onClick={() => handleMenuClick('/customers/add')}>
                         <ListItemIcon>
                             <PersonAddIcon />
                         </ListItemIcon>
